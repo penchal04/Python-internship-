@@ -1,0 +1,44 @@
+import random
+
+# Set the number to guess
+number_to_guess = random.randint(1, 100)
+
+# Set the number of guesses
+number_of_guesses = 10
+
+print("Welcome to the guessing game!")
+print("I'm thinking of a number between 1 and 100.")
+print("You have", number_of_guesses, "guesses.")
+
+while number_of_guesses > 0:
+    # Get the user's guess
+    user_guess = int(input("Guess a number: "))
+
+    # Check if the guess is correct
+    if user_guess == number_to_guess:
+        print("Congratulations! You guessed the number correctly.")
+        break
+    elif user_guess < number_to_guess:
+        print("Too low! Try a higher number.")
+    else:
+        print("Too high! Try a lower number.")
+
+    # Decrement the number of guesses
+    number_of_guesses -= 1
+
+    # Print the number of guesses left
+    print("You have", number_of_guesses, "guesses left.")
+
+if number_of_guesses == 0:
+    print("Sorry, you didn't guess the number. The number was", number_to_guess)
+```
+
+In this code:
+
+- We first import the `random` module to generate a random number for the user to guess.
+- We set the `number_to_guess` variable to a random number between 1 and 100.
+- We set the `number_of_guesses` variable to 10.
+- We use a `while` loop to allow the user to guess the number until they run out of guesses.
+- Inside the loop, we get the user's guess, check if it's correct, and provide hints if it's too high or too low.
+- We decrement the `number_of_guesses` variable after each guess.
+- If the user runs out of guesses, we reveal the correct number
